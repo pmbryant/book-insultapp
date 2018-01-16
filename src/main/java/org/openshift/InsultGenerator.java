@@ -11,12 +11,12 @@ public class InsultGenerator {
 		String article = "an";
 		String theInsult = "";
 		
-		try {
-			String dbURL = "jdbc:postgresql://";
-			dbURL += System.getenv("POSTGRESQL_SERVICE_HOST");
-			dbURL += "/" + System.getenv("POSTGRESQL_DATABASE");
-			System.out.println( "Database URL : " + dbURL );
+		String dbURL = "jdbc:postgresql://";	
+		dbURL += System.getenv("POSTGRESQL_SERVICE_HOST");
+		dbURL += "/" + System.getenv("POSTGRESQL_DATABASE");
+		System.out.println( "Database URL : " + dbURL );
 			
+		try {
 			String username = System.getenv("POSTGRESQL_USER");
 			String pwd = System.getenv("PGPASSWORD");
 			
@@ -36,7 +36,7 @@ public class InsultGenerator {
 			}
 			
 		} catch (Exception e) {
-			return "Database connxn problem! " + e;
+			return "Database connxn problem!!! " + dbURL + " - " + e;
 		}
 		return theInsult;
 	}
