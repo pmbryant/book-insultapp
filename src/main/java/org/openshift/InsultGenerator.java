@@ -35,7 +35,7 @@ public class InsultGenerator {
 			}
 			
 		} catch (Exception e) {
-			return "Database connxn problem!";
+			return "Database connxn problem! " + e;
 		}
 		return theInsult;
 	}
